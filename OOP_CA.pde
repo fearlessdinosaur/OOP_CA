@@ -17,6 +17,7 @@ float centy;
 DecimalFormat df = new DecimalFormat("0000.0");
 
 void draw()
-{
+{ 
+   background(0);
    wall.display();
 }
