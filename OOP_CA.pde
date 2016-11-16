@@ -5,12 +5,14 @@
 */
 import java.text.*;
 Walls wall;
+Turbine turbine;
 void setup()
 {
   fullScreen();
   centx= width/2;
   centy= height/2;
   wall=new Walls();
+  turbine=new Turbine();
 }
 float centx;
 float centy;
