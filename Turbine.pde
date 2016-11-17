@@ -20,7 +20,7 @@ class Turbine
     ellipse(x,y,radius/4,radius/4);
      for(fanTheta=0;fanTheta<=360;fanTheta=fanTheta+45)
      {
-       fan=new Fan(fanTheta,35);
+       fan=new Fan(fanTheta,turbine.radius/8);
        fan.display();
      }
   }
