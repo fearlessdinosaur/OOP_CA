@@ -6,6 +6,7 @@
 import java.text.*;
 Walls wall;
 Turbine turbine;
+Fan fan;
 void setup()
 {
   fullScreen();
@@ -17,6 +18,7 @@ DecimalFormat df = new DecimalFormat("0000.0");
 float centx;
 float centy;
 float theta;
+float fanTheta;
 int j;
 
 void draw()
@@ -29,5 +31,5 @@ void draw()
      println(theta);
      turbine.display();
    }
-
+   j += 5;
 }
