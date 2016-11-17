@@ -19,7 +19,7 @@ float centx;
 float centy;
 float theta;
 float fanTheta;
-int j;
+float j;
 
 void draw()
 { 
@@ -31,5 +31,5 @@ void draw()
      println(theta);
      turbine.display();
    }
-   j += 10;
+
 }

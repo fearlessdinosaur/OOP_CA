@@ -15,5 +15,6 @@ class Fan
     x=turbine.x+ rad * cos(radians(theta+j));
     y=turbine.y+ rad * sin(radians(theta+j));
     line(turbine.x,turbine.y,x,y);
+    j += .2;
   }
 }
