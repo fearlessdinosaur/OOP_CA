@@ -5,15 +5,17 @@ class GUI
   char status = 's';
   float x;
   float y;
-  String data;
+  float data;
   char type;
+  String name;
   
-  GUI(float x, float y, String data, char type)
+  GUI(float x, float y,String name,float data, char type)
   {
     this.x=x;
     this.y=y;
     this.data=data;
     this.type=type;
+    this.name=name;
   }
   
   void display()
@@ -24,7 +26,7 @@ class GUI
     }
     if(type==gauge)
     {
-      
+      rect(x,y,50,50);
     }
     if(type==status)
     {
