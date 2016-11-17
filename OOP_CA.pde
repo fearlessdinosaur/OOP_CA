@@ -13,18 +13,21 @@ void setup()
   centy= height/2;
   wall=new Walls();
 }
+DecimalFormat df = new DecimalFormat("0000.0");
 float centx;
 float centy;
 float theta;
-DecimalFormat df = new DecimalFormat("0000.0");
+int j;
 
 void draw()
 { 
    background(0);
    wall.display();
-   
-   for(theta=45;theta<360;theta=theta+90);
+   for(theta=45;theta<=360;theta=theta+90)
    {
-     
+     turbine=new Turbine(theta,wall.outerRad/2);
+     println(theta);
+     turbine.display();
    }
+
 }
