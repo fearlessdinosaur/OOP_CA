@@ -31,5 +31,5 @@ void draw()
      println(theta);
      turbine.display();
    }
-   j += 5;
+   j += 10;
 }
