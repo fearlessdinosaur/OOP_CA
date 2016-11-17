@@ -33,6 +33,7 @@ void draw()
 { 
    background(0);
    gauge1= new GUI(width-(xSpacer),height-(ySpacer*9),"temp",1000,'g');
+   gauge2= new GUI(width-(xSpacer),height-((ySpacer*9)-20),"Pressure",1000,'g');
    wall.display();
    for(theta=45;theta<=360;theta=theta+90)
    {
@@ -41,5 +42,6 @@ void draw()
      turbine.display();
    }
    gauge1.display();
+   gauge2.display();
 
 }

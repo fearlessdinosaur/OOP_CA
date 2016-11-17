@@ -26,7 +26,9 @@ class GUI
     }
     if(type==gauge)
     {
-      rect(x,y,50,50);
+      textSize(15);
+      fill(wall.colour);
+      text(name+":"+data,x,y);
     }
     if(type==status)
     {
