@@ -13,7 +13,7 @@ class Fan
    
   void display()
   {
-      if(turbine.ang!=135&&dam==true)
+      if(turbine.ang==turbine.meltdown&&melt==true)
       {
       x=turbine.x+ rad * cos(radians(theta));
       y=turbine.y+ rad * sin(radians(theta));
@@ -30,10 +30,5 @@ class Fan
 
   }
   
-  void bad()
-  {
-    dam=true;
-    
-  }
 
 }

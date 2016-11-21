@@ -5,16 +5,18 @@ class Turbine
   float ang;
   float radius;
   int j;
-
+  int meltdown=135;
   Turbine(float theta, float rad)
   {  
     ang=theta;
     radius=rad;
   }
   void display()
-  {
-    damage(135);
-
+  {  
+    if(melt==true)
+    {
+      damage(meltdown);
+    }
     x=centx+(radius-5)*cos(radians(ang));
     y=centy+(radius-5)*sin(radians(ang));
     ellipse(x, y, radius/4, radius/4);
