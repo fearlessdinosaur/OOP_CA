@@ -4,6 +4,7 @@ class Fan
   float rad;
   float x;
   float y;
+  boolean dam=false;
   Fan(float ang,float radi)
   {
       theta=ang;
@@ -12,13 +13,27 @@ class Fan
    
   void display()
   {
-    x=turbine.x+ rad * cos(radians(theta+j));
-    y=turbine.y+ rad * sin(radians(theta+j));
-    line(turbine.x,turbine.y,x,y);
-    j += .2;
+      if(turbine.ang!=135&&dam==true)
+      {
+      x=turbine.x+ rad * cos(radians(theta));
+      y=turbine.y+ rad * sin(radians(theta));
+      line(turbine.x,turbine.y,x,y);
+      j += .2;
+      }
+      else
+      {
+        x=turbine.x+ rad * cos(radians(theta+j));
+        y=turbine.y+ rad * sin(radians(theta+j));
+        line(turbine.x,turbine.y,x,y);
+        j += .2;
+      }
+
   }
-  void damage()
+  
+  void bad()
   {
-    fill(255,0,0);
+    dam=true;
+    
   }
+
 }

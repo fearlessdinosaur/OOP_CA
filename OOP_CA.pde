@@ -1,7 +1,7 @@
 /* Program to draw the heads up display for a reactor core.
   Author: David Fox (C15436172)
   gitName:fearlessdinosaur
-  Date:16/11/2016
+  Date:21/11/2016
 */
 import java.text.*;
 Walls wall;
@@ -56,14 +56,4 @@ void draw()
    stat3.display();
    stat4.display();
    gauge1.update();
-}
-
-void warning(float theta)
-{
-  if(fan.theta==theta)
-  {
-     fan.damage();
-     
-  }
-     
 }
