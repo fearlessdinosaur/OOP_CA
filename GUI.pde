@@ -8,6 +8,7 @@ class GUI
   float data;
   char type;
   String name;
+  float alter;
   
   GUI(float x, float y,String name,float data, char type)
   {
@@ -32,7 +33,22 @@ class GUI
     }
     if(type==status)
     {
-      
+      fill(0);
+      textSize(36);
+      textAlign(CENTER,CENTER);
+      rect(x,y,xSpacer*2,ySpacer*1);
+      fill(wall.colour);
+      text(name,xSpacer*1.1,ySpacer*data);
+      fill(0);
+    }
+  }
+  void update()
+  {
+    if(frameCount%5==0)
+    {
+
+        temp +=random(-10,10);
+        press +=random(-10,10);
     }
   }
 }
