@@ -17,4 +17,8 @@ class Fan
     line(turbine.x,turbine.y,x,y);
     j += .2;
   }
+  void damage()
+  {
+    fill(255,0,0);
+  }
 }

@@ -57,3 +57,13 @@ void draw()
    stat4.display();
    gauge1.update();
 }
+
+void warning(float theta)
+{
+  if(fan.theta==theta)
+  {
+     fan.damage();
+     
+  }
+     
+}
