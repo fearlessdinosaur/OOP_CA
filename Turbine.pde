@@ -5,8 +5,9 @@ class Turbine
   float ang;
   float radius;
   int j;
-  int meltdown=135;
+  int meltdown=45;
   int level;
+  int val;
   Turbine(float theta, float rad)
   {  
     ang=theta;
@@ -36,7 +37,7 @@ class Turbine
         damage(meltdown);
         damage(meltdown+90);
         damage(meltdown+180);
-        damage(45);
+        damage(meltdown+270);
     }
     
     x=centx+(radius-5)*cos(radians(ang));
@@ -68,15 +69,18 @@ class Turbine
      if(frameCount>400)
      {
        level=2;
+       val=90;
      }
      
      if(frameCount>600)
      {
        level=3;
+       val=180;
      }
      if(frameCount>800)
      {
        level=4;
+       val=270;
      }
   }
 }

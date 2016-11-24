@@ -5,6 +5,7 @@ class Fan
   float x;
   float y;
   boolean dam=false;
+  boolean destroy=false;
   Fan(float ang,float radi)
   {
       theta=ang;
@@ -12,8 +13,13 @@ class Fan
   }
    
   void display()
-  {
-      if(turbine.ang==turbine.meltdown)
+  {   
+      
+      if(frameCount>200)
+      {
+        destroy=true;
+      }
+      if(turbine.ang>=turbine.meltdown && turbine.ang<=turbine.meltdown+turbine.val&& destroy==true)
       {
       x=turbine.x+ rad * cos(radians(theta));
       y=turbine.y+ rad * sin(radians(theta));
@@ -27,7 +33,6 @@ class Fan
         line(turbine.x,turbine.y,x,y);
         j += .2;
       }
-
   }
   
 
