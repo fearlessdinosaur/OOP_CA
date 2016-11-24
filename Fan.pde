@@ -13,7 +13,7 @@ class Fan
    
   void display()
   {
-      if(turbine.ang==turbine.meltdown&&melt==true)
+      if(turbine.ang==turbine.meltdown)
       {
       x=turbine.x+ rad * cos(radians(theta));
       y=turbine.y+ rad * sin(radians(theta));

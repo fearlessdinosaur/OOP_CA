@@ -6,6 +6,7 @@ class Turbine
   float radius;
   int j;
   int meltdown=135;
+  int level;
   Turbine(float theta, float rad)
   {  
     ang=theta;
@@ -13,10 +14,31 @@ class Turbine
   }
   void display()
   {  
-    if(melt==true)
-    {
-      damage(meltdown);
+    fill(0);
+    meltdown();
+    if(level==1)
+    { 
+        damage(meltdown);
     }
+    if(level==2)
+    { 
+        damage(meltdown);
+        damage(meltdown+90);
+    }
+    if(level==3)
+    { 
+        damage(meltdown);
+        damage(meltdown+90);
+        damage(meltdown+180);
+    }
+    if(level==4)
+    { 
+        damage(meltdown);
+        damage(meltdown+90);
+        damage(meltdown+180);
+        damage(45);
+    }
+    
     x=centx+(radius-5)*cos(radians(ang));
     y=centy+(radius-5)*sin(radians(ang));
     ellipse(x, y, radius/4, radius/4);
@@ -34,9 +56,27 @@ class Turbine
     if (ang==theta)
     {
       fill(255, 0, 0);
-    } else
-    {
-      fill(0);
-    }
+    } 
+
+  }
+  void meltdown()
+  {  
+     if(frameCount>200)
+     {
+       level=1;
+     }
+     if(frameCount>400)
+     {
+       level=2;
+     }
+     
+     if(frameCount>600)
+     {
+       level=3;
+     }
+     if(frameCount>800)
+     {
+       level=4;
+     }
   }
 }

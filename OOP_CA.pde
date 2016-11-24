@@ -32,7 +32,6 @@ float xSpacer;
 float ySpacer;
 float temp=1000;
 float press=400;
-boolean melt=false;
 void draw()
 { 
    background(0);
