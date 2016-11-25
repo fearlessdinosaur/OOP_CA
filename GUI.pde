@@ -21,6 +21,7 @@ class GUI
   
   void display()
   {
+    strokeWeight(3);
     if(type==button)
     {
       
@@ -34,6 +35,7 @@ class GUI
     if(type==status)
     {
       fill(0);
+      check();
       textSize(36);
       textAlign(CENTER,CENTER);
       rect(x,y,xSpacer*2,ySpacer*1);
@@ -46,9 +48,43 @@ class GUI
   {
     if(frameCount%5==0)
     {
-
         temp +=random(-10,10);
         press +=random(-10,10);
     }
-  }
+  } 
+
+void check()
+{
+    if(turbine.level>=1)
+    {
+      if(data==1.5*1)
+      {
+        fill(255,0,0);
+      }
+    }
+    
+    if(turbine.level>=2)
+    {
+      if(data==1.5*2)
+      {
+        fill(255,0,0);
+      }
+    }
+   
+    if(turbine.level>=3)
+    {
+      if(data==1.5*3)
+      {
+        fill(255,0,0);
+      }
+    }
+    if(turbine.level>=4)
+    {
+      if(data==1.5*4)
+      {
+        fill(255,0,0);
+      }
+    }    
+}
+
 }

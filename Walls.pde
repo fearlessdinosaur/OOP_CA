@@ -1,3 +1,4 @@
+
 class Walls
 {
   float outerRad;
@@ -13,7 +14,9 @@ class Walls
   }
   
   void display()
-  {  stroke(colour);
+  {  
+     stroke(colour);
+     strokeWeight(2);
      fill(0);
      ellipse(centx,centy,outerRad,outerRad);
      ellipse(centx,centy,innerRad,innerRad);
