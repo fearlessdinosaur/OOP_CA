@@ -8,8 +8,7 @@ class GUI
   float data;
   char type;
   String name;
-  float alter;
-  
+  String reading;
   GUI(float x, float y,String name,float data, char type)
   {
     this.x=x;
@@ -17,6 +16,7 @@ class GUI
     this.data=data;
     this.type=type;
     this.name=name;
+    reading= "working correctly";
   }
   
   void display()
@@ -42,6 +42,17 @@ class GUI
       fill(wall.colour);
       text(name,xSpacer*1.1,ySpacer*data);
       fill(0);
+      if( mouseX<=x+xSpacer*2&&mouseX>=x)
+      {
+        if(mouseY<=y+ySpacer*1&&mouseY>=y)
+        {
+          textSize(10);
+          textAlign(CENTER,RIGHT);
+          fill(255);
+          text("status:"+reading,(x+xSpacer*2)+80,y);
+          println("placeholder");
+        }
+      }
     }
   }
   void update()
@@ -60,6 +71,7 @@ void check()
       if(data==1.5*1)
       {
         fill(255,0,0);
+        reading="turbine Damaged";
       }
     }
     
@@ -68,6 +80,7 @@ void check()
       if(data==1.5*2)
       {
         fill(255,0,0);
+        reading="turbine Damaged";
       }
     }
    
@@ -76,6 +89,7 @@ void check()
       if(data==1.5*3)
       {
         fill(255,0,0);
+        reading="turbine Damaged";
       }
     }
     if(turbine.level>=4)
@@ -83,6 +97,7 @@ void check()
       if(data==1.5*4)
       {
         fill(255,0,0);
+        reading="turbine Damaged";
       }
     }    
 }
