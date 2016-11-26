@@ -19,8 +19,10 @@ void setup()
   centx= width/2;
   centy= height/2;
   wall=new Walls();
-   xSpacer=width/10;
-   ySpacer=height/10;
+  xSpacer=width/10;
+  ySpacer=height/10;
+  halfScreenX=width-width/2;
+  halfScreenY=height-height/2;
 }
 DecimalFormat df = new DecimalFormat("0000.0");
 float centx;
@@ -33,6 +35,8 @@ float ySpacer;
 float temp=1000;
 float press=400;
 int count;
+float halfScreenX;
+float halfScreenY;
 void draw()
 { 
   count++;
