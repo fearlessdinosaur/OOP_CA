@@ -7,12 +7,12 @@ import java.text.*;
 Walls wall;
 Turbine turbine;
 Fan fan;
-GUI gauge1;
-GUI gauge2;
-GUI stat1;
-GUI stat2;
-GUI stat3;
-GUI stat4;
+Gauge gauge1;
+Gauge gauge2;
+Status stat1;
+Status stat2;
+Status stat3;
+Status stat4;
 void setup()
 {
   fullScreen();
@@ -32,15 +32,18 @@ float xSpacer;
 float ySpacer;
 float temp=1000;
 float press=400;
+int count;
 void draw()
 { 
+  count++;
+  println("count"+count);
    background(0);
-   gauge1= new GUI(width-(xSpacer),height-(ySpacer*9),"temp",temp,'g');
-   gauge2= new GUI(width-(xSpacer),height-((ySpacer*9)-20),"Pressure",press,'g');
-   stat1= new GUI(width-(xSpacer*9.95),height-(ySpacer*9),"Fan 1",1.5,'s');
-   stat2= new GUI(width-(xSpacer*9.95),height-(ySpacer*7.5),"Fan 2",3.0,'s');
-   stat3= new GUI(width-(xSpacer*9.95),height-(ySpacer*6.0),"Fan 3",4.5,'s');
-   stat4= new GUI(width-(xSpacer*9.95),height-(ySpacer*4.5),"Fan 4",6.0,'s');
+   gauge1= new Gauge(width-(xSpacer),height-(ySpacer*9),"temp",temp,'g');
+   gauge2= new Gauge(width-(xSpacer),height-((ySpacer*9)-20),"Pressure",press,'g');
+   stat1= new Status(width-(xSpacer*9.95),height-(ySpacer*9),"Fan 1",1.5,'s');
+   stat2= new Status(width-(xSpacer*9.95),height-(ySpacer*7.5),"Fan 2",3.0,'s');
+   stat3= new Status(width-(xSpacer*9.95),height-(ySpacer*6.0),"Fan 3",4.5,'s');
+   stat4= new Status(width-(xSpacer*9.95),height-(ySpacer*4.5),"Fan 4",6.0,'s');
    wall.display();
    for(theta=45;theta<=360;theta=theta+90)
    {
