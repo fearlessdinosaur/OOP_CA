@@ -67,22 +67,22 @@ class Turbine
      {
        meltCount++;
        println(meltCount);
-       if(meltCount>1000)
+       if(meltCount>=1000)
        {
          level=1;
        }
-       if(meltCount>5000)
+       if(temp>=2000)
        {
          level=2;
          val=90;
        }
        
-       if(meltCount>10000)
+       if(temp>=3000)
        {
          level=3;
          val=180;
        }
-       if(meltCount>15000)
+       if(temp>=4000)
        {
          level=4;
          val=270;
