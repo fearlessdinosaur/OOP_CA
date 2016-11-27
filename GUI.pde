@@ -1,8 +1,6 @@
 class GUI
 {
-  char button= 'b';
-  char gauge = 'g';
-  char status = 's';
+
   float x;
   float y;
   float data;
@@ -15,10 +13,7 @@ class GUI
   {
 
     strokeWeight(3);
-    if(type==button)
-    {
-      
-    }
+
 
   }
   void update()

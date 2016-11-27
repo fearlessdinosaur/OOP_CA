@@ -42,12 +42,12 @@ void draw()
   count++;
   println("count"+count);
    background(0);
-   gauge1= new Gauge(width-(xSpacer),height-(ySpacer*9),"temp",temp,'g');
-   gauge2= new Gauge(width-(xSpacer),height-((ySpacer*9)-20),"Pressure",press,'g');
-   stat1= new Status(width-(xSpacer*9.95),height-(ySpacer*9),"Fan 1",1.5,'s');
-   stat2= new Status(width-(xSpacer*9.95),height-(ySpacer*7.5),"Fan 2",3.0,'s');
-   stat3= new Status(width-(xSpacer*9.95),height-(ySpacer*6.0),"Fan 3",4.5,'s');
-   stat4= new Status(width-(xSpacer*9.95),height-(ySpacer*4.5),"Fan 4",6.0,'s');
+   gauge1= new Gauge(width-(xSpacer),height-(ySpacer*9),"temp",temp);
+   gauge2= new Gauge(width-(xSpacer),height-((ySpacer*9)-20),"Pressure",press);
+   stat1= new Status(width-(xSpacer*9.95),height-(ySpacer*9),"Fan 1",1.5);
+   stat2= new Status(width-(xSpacer*9.95),height-(ySpacer*7.5),"Fan 2",3.0);
+   stat3= new Status(width-(xSpacer*9.95),height-(ySpacer*6.0),"Fan 3",4.5);
+   stat4= new Status(width-(xSpacer*9.95),height-(ySpacer*4.5),"Fan 4",6.0);
    wall.display();
    for(theta=45;theta<=360;theta=theta+90)
    {
