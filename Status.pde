@@ -6,6 +6,7 @@ class Status extends GUI
     this.y=y;
     this.data=data;
     this.name=name;
+    reading="working correctly";
   }
   
   void display()
