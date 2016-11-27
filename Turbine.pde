@@ -6,7 +6,7 @@ class Turbine
   float radius;
   int j;
   int meltdown=45;
-  int level;
+  int level=0;
   int val;
   Turbine(float theta, float rad)
   {  
@@ -62,25 +62,31 @@ class Turbine
   }
   void meltdown()
   {  
-     if(frameCount>200)
+    start.pressed();
+    if(running==true)
      {
-       level=1;
-     }
-     if(frameCount>400)
-     {
-       level=2;
-       val=90;
-     }
-     
-     if(frameCount>600)
-     {
-       level=3;
-       val=180;
-     }
-     if(frameCount>800)
-     {
-       level=4;
-       val=270;
+       meltCount++;
+       println(meltCount);
+       if(meltCount>1000)
+       {
+         level=1;
+       }
+       if(meltCount>5000)
+       {
+         level=2;
+         val=90;
+       }
+       
+       if(meltCount>10000)
+       {
+         level=3;
+         val=180;
+       }
+       if(meltCount>15000)
+       {
+         level=4;
+         val=270;
+       }
      }
   }
 }

@@ -1,7 +1,7 @@
 /* Program to draw the heads up display for a reactor core.
   Author: David Fox (C15436172)
   gitName:fearlessdinosaur
-  Date:21/11/2016
+  Date:27/11/2016
 */
 import java.text.*;
 Walls wall;
@@ -13,6 +13,7 @@ Status stat1;
 Status stat2;
 Status stat3;
 Status stat4;
+Button start;
 void setup()
 {
   fullScreen();
@@ -35,12 +36,13 @@ float ySpacer;
 float temp=1000;
 float press=400;
 int count;
+int meltCount;
 float halfScreenX;
 float halfScreenY;
+boolean running;
 void draw()
 { 
   count++;
-  println("count"+count);
    background(0);
    gauge1= new Gauge(width-(xSpacer),height-(ySpacer*9),"temp",temp);
    gauge2= new Gauge(width-(xSpacer),height-((ySpacer*9)-20),"Pressure",press);
@@ -48,11 +50,11 @@ void draw()
    stat2= new Status(width-(xSpacer*9.95),height-(ySpacer*7.5),"Fan 2",3.0);
    stat3= new Status(width-(xSpacer*9.95),height-(ySpacer*6.0),"Fan 3",4.5);
    stat4= new Status(width-(xSpacer*9.95),height-(ySpacer*4.5),"Fan 4",6.0);
+   start= new Button(width-(xSpacer*2.5),height-ySpacer*2,"Run meltdown test",xSpacer*2,ySpacer);
    wall.display();
    for(theta=45;theta<=360;theta=theta+90)
    {
      turbine=new Turbine(theta,wall.outerRad/2);
-     println(theta);
      turbine.display();
    }
    gauge1.display();
@@ -62,4 +64,15 @@ void draw()
    stat3.display();
    stat4.display();
    gauge1.update();
+   start.display();
+}
+
+void mousePressed() 
+{
+  if(running==false)
+  {
+    running=true;
+  }
+  
+  
 }

@@ -15,7 +15,7 @@ class Fan
   void display()
   {   
       
-      if(frameCount>200)
+      if(turbine.level>=1)
       {
         destroy=true;
       }
