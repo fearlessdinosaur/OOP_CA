@@ -1,4 +1,4 @@
-class Turbine
+class Turbine//displays turbine body
 {
   ArrayList<Fan> fans = new ArrayList<Fan>();
   float x;
@@ -22,8 +22,8 @@ class Turbine
   void display()
   {      
     fill(0);
-    meltdown();
-    if(level==1)
+    meltdown();//calls meltdown
+    if(level==1)// code to stop fans moving 
     { 
         damage(meltdown);
         Turbine turb = turbines.get(0);
@@ -61,11 +61,11 @@ class Turbine
     
     for (Fan fan : fans) 
    {  
-      if(dam==false)
+      if(dam==false) // displays moving fan
       {
         fan.display();
       }
-      else
+      else // displays stationary fan
       {
         fan.broken();
       }
@@ -84,14 +84,14 @@ class Turbine
     } 
 
   }
-  void meltdown()
+  void meltdown()//increases the level, changing the state of the program
   {  
 
     if(running==true)
      {
 
-       meltCount++;
-       if(meltCount>=1000)
+       meltCount++;//counter to set level 1
+       if(meltCount>=500)
        {
          level=1;
        }
