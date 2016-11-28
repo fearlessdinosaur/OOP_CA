@@ -10,7 +10,7 @@ class Turbine
   int level=0;
   int val;
   boolean dam;
-  float integ;
+
   Turbine(float theta, float rad)
   {  
     ang=theta;
@@ -19,21 +19,9 @@ class Turbine
     y=centy+(radius-5)*sin(radians(ang));
     dam=false;
     fans.add(new Fan(x,y,radius));
-    integ=100;
   }
   void display()
-  {  
-      if( mouseX<=x+xSpacer*2&&mouseX>=x)
-      {
-        if(mouseY<=y+ySpacer*1&&mouseY>=y)
-        {
-          fill(wall.colour);
-          textSize(14);
-          text("hull Integrity: "+integ+"%",x+50,y-100);
-        }
-      }
-    
-    
+  {     
     fill(0);
     meltdown();
     if(level==1)

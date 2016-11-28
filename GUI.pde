@@ -31,6 +31,7 @@ class GUI
           {
             temp +=5;
             press -=2;
+            wall.integ -= .1;
           }
       }    
     }
