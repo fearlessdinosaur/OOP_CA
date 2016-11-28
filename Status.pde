@@ -6,7 +6,7 @@ class Status extends GUI// subclass of gui class
     this.y=y;
     this.data=data;
     this.name=name;
-    reading="working correctly";//displays status of turbines
+    reading="working correctly";//sets initial turbine status
   }
   
   void display()
@@ -26,7 +26,7 @@ class Status extends GUI// subclass of gui class
           textSize(14);
           textAlign(CENTER,RIGHT);
           fill(wall.colour);
-          text("status:"+reading,(x+xSpacer*1.9)+100,y);//displays core integrity
+          text("status:"+reading,(x+xSpacer*1.9)+100,y);//displays turbine status
         }
       }
   }

@@ -1,5 +1,4 @@
-
-class Walls
+class Walls// draws basic design for reactor
 {
   float outerRad;
   float innerRad;
@@ -30,7 +29,7 @@ class Walls
             {
               fill(0);
             }
-          text("WARNING: Core Integrity below 50%",xSpacer*5,ySpacer);
+          text("WARNING: Core Integrity below 50%",xSpacer*5,ySpacer);// prints integrity warning
           fill(colour);
         }
         
@@ -40,7 +39,7 @@ class Walls
       {
         if(mouseY<=centy+coreRad&&mouseY>=centy-coreRad)
         {
-          text("Core Integrity: "+integ+"%",centx+coreRad,centy-coreRad);
+          text("Core Integrity: "+integ+"%",centx+coreRad,centy-coreRad);// shows core integrity
           if(mousePressed==true&& temp<3000)
           {
           }
