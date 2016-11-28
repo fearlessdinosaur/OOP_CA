@@ -1,4 +1,4 @@
-class GUI
+class GUI//masterclass for all GUI objects
 {
 
   float x;
@@ -10,21 +10,17 @@ class GUI
 
 
   
-  void display()
-  {
 
-    strokeWeight(3);
-
-
-  }
   void update()
   {
+    strokeWeight(3);
     if(frameCount%5==0)
     {  
       for (Turbine tur : turbines) 
       {
           if(tur.level==0)
           {
+            //controls the variation of temp and press
            if(reset==true)
            {
              if(temp>1000)

@@ -24,10 +24,12 @@ void setup()
   ySpacer=height/10;
   halfScreenX=width-width/2;
   halfScreenY=height-height/2;
+  //adding to array list
   turbines.add(new Turbine(45,wall.outerRad/2));
   turbines.add(new Turbine(135,wall.outerRad/2));
   turbines.add(new Turbine(225,wall.outerRad/2));
   turbines.add(new Turbine(315,wall.outerRad/2));
+  //adding to array list
   stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*9),"Fan 1",1.5));
   stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*7.5),"Fan 2",3.0));
   stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*6.0),"Fan 3",4.5));
