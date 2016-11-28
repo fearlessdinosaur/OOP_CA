@@ -17,9 +17,12 @@ class Button extends GUI
    fill(0);
    textSize(36);
    textAlign(CENTER,CENTER);
-   rect(x,y,xSize,ySize);
-   fill(wall.colour);
-   text(name,x+(xSize/2),y+(ySize/2));
+   if(meltCount<=1000)
+   {
+     rect(x,y,xSize,ySize);
+     fill(wall.colour);
+     text(name,x+(xSize/2),y+(ySize/2));
+   }
  }
  
  void pressed()

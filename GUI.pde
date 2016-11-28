@@ -24,14 +24,23 @@ class GUI
       {
           if(tur.level==0)
           {
-            temp +=random(-10,10);
-            press +=random(-10,10);
+
+
           }
           if(tur.level>=1)
           {
-            temp +=5;
-            press -=2;
-            wall.integ -= .1;
+            if(temp<4000)
+            {
+              temp +=5;
+            }
+            if(press>=1)
+            {
+              press -=1;
+            }
+            if(wall.integ>0)
+            {
+               wall.integ -= .25;
+            }             
           }
       }    
     }

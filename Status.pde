@@ -103,7 +103,7 @@ class Status extends GUI
               fill(0);
               count=0;
             }
-          
+            reading="turbine Damaged";          
         }
   
   

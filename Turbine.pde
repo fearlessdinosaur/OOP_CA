@@ -21,7 +21,7 @@ class Turbine
     fans.add(new Fan(x,y,radius));
   }
   void display()
-  {     
+  {      
     fill(0);
     meltdown();
     if(level==1)
