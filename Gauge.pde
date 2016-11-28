@@ -13,5 +13,7 @@ class Gauge extends GUI
       textSize(15);
       fill(wall.colour);
       text(name+":"+df.format(data),x,y);
+      println(temp);
+      println(press);
   }
 }

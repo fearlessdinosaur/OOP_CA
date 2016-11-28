@@ -10,11 +10,8 @@ ArrayList<Status> stats = new ArrayList<Status>();
 Fan fan;
 Gauge gauge1;
 Gauge gauge2;
-Status stat1;
-Status stat2;
-Status stat3;
-Status stat4;
 Button start;
+Button stop;
 void setup()
 {
   fullScreen();
@@ -34,7 +31,9 @@ void setup()
   stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*6.0),"Fan 3",4.5));
   stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*4.5),"Fan 4",6.0));
   start= new Button(width-(xSpacer*2.5),height-ySpacer*2,"Run meltdown test",xSpacer*2,ySpacer);
-  
+  gauge1= new Gauge(width-(xSpacer),height-(ySpacer*9),"temp",temp);
+  gauge2= new Gauge(width-(xSpacer),height-((ySpacer*9)-20),"Pressure",press);
+  stop= new Button((xSpacer),height-ySpacer*2,"Purge Core",xSpacer*2,ySpacer);
 }
 DecimalFormat df = new DecimalFormat("0000.0");
 float centx;
@@ -55,18 +54,21 @@ void draw()
 { 
   count++;
    background(0);
-   gauge1= new Gauge(width-(xSpacer),height-(ySpacer*9),"temp",temp);
-   gauge2= new Gauge(width-(xSpacer),height-((ySpacer*9)-20),"Pressure",press);
-   stat1= new Status(width-(xSpacer*9.95),height-(ySpacer*9),"Fan 1",1.5);
-   stat2= new Status(width-(xSpacer*9.95),height-(ySpacer*7.5),"Fan 2",3.0);
-   stat3= new Status(width-(xSpacer*9.95),height-(ySpacer*6.0),"Fan 3",4.5);
-   stat4= new Status(width-(xSpacer*9.95),height-(ySpacer*4.5),"Fan 4",6.0);
-   wall.display();
 
+   wall.display();
+    gauge1= new Gauge(width-(xSpacer),height-(ySpacer*9),"temp",temp);
+    gauge2= new Gauge(width-(xSpacer),height-((ySpacer*9)-20),"Pressure",press);
    gauge1.display();
    gauge2.display();
    gauge1.update();
-   start.display();
+   if(temp<1500)
+   {
+     start.display();
+   }
+   if(temp>1500)
+   {
+     stop.display();
+   }
    for (Turbine tur : turbines) 
    {
       tur.display();
@@ -86,6 +88,24 @@ void mousePressed()
             if(running==false)
             {
               running=true;
+            }    
+        }
+      }
+      if( mouseX<=stop.x+xSpacer*2&&mouseX>=stop.x)
+      {
+        if(mouseY<=stop.y+ySpacer*1&&mouseY>=stop.y)
+        {
+            if(running==true)
+            {
+                running=false;
+                temp=1000;
+                press=400;
+                wall.integ=100;
+               for (Turbine tur : turbines) 
+               {
+                tur.level=0;
+                tur.dam=false;
+               }
             }    
         }
       }
