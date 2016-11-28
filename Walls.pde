@@ -17,14 +17,19 @@ class Walls
   
   void display()
   {  
+          fill(colour);
+          textSize(14);
+        if(integ<50)
+        {
+          text("WARNING: Core Integrity below 50%",xSpacer,ySpacer);
+        }
+    
     
       if( mouseX<=centx+coreRad&&mouseX>=centx-coreRad)
       {
         if(mouseY<=centy+coreRad&&mouseY>=centy-coreRad)
         {
-          fill(colour);
-          textSize(14);
-          text("Core Strength: "+integ+"%",centx+coreRad,centy-coreRad);
+          text("Core Integrity: "+integ+"%",centx+coreRad,centy-coreRad);
         }
       }
      stroke(colour);
