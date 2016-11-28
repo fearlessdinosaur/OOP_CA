@@ -1,12 +1,13 @@
 class Gauge extends GUI//subclass of GUI class
 {
-  
-  Gauge(float x, float y,String name,float data)
+  String symbol;
+  Gauge(float x, float y,String name,float data,String symbol)
   {
     this.x=x;
     this.y=y;
     this.data=data;
     this.name=name;
+    this.symbol=symbol;
   }
   
   void display()
@@ -14,8 +15,6 @@ class Gauge extends GUI//subclass of GUI class
       textAlign(CENTER,CENTER);
       textSize(15);
       fill(wall.colour);
-      text(name+":"+df.format(data),x,y);
-      println(temp);
-      println(press);
+      text(name+":"+df.format(data)+symbol,x,y);//displays data
   }
 }

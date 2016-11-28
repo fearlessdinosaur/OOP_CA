@@ -27,7 +27,7 @@ class GUI//masterclass for all GUI objects
              {
                temp -= 5;
              }
-             if(press<400)
+             if(press<1000)
              {
                press++;
              }
@@ -37,7 +37,7 @@ class GUI//masterclass for all GUI objects
              temp += (int)random(-3,3);
              press += (int)random(-1,1);
            }
-           if(temp<=1000 && press<=400)
+           if(temp<=1000 && press<=1000)
            {
              reset=false;
            }

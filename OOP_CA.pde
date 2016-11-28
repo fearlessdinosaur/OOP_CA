@@ -35,8 +35,6 @@ void setup()
   stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*6.0),"Fan 3",4.5));
   stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*4.5),"Fan 4",6.0));
   start= new Button(width-(xSpacer*2.5),height-ySpacer*2,"Run meltdown test",xSpacer*2,ySpacer);
-  gauge1= new Gauge(width-(xSpacer),height-(ySpacer*9),"temp",temp);
-  gauge2= new Gauge(width-(xSpacer),height-((ySpacer*9)-20),"Pressure",press);
   stop= new Button((xSpacer/3),height-ySpacer*2,"Purge Core",xSpacer*2,ySpacer);
 }
 
@@ -49,7 +47,7 @@ float j;
 float xSpacer;
 float ySpacer;
 float temp=1000;
-float press=400;
+float press=1000;
 int count;
 int meltCount;
 float halfScreenX;
@@ -62,8 +60,8 @@ void draw()
    background(0);
 
    wall.display();
-   gauge1= new Gauge(width-(xSpacer),height-(ySpacer*9),"temp",temp);
-   gauge2= new Gauge(width-(xSpacer),height-((ySpacer*9)-20),"Pressure",press);
+   gauge1= new Gauge(width-(xSpacer),height-(ySpacer*9),"temp",temp," C");
+   gauge2= new Gauge(width-(xSpacer),height-((ySpacer*9)-20),"Pressure",press," p/si");
    gauge1.display();
    gauge2.display();
    gauge1.update();

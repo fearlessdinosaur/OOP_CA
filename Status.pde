@@ -1,4 +1,4 @@
-class Status extends GUI
+class Status extends GUI// subclass of gui class
 {
   Status(float x, float y,String name,float data)
   {
@@ -6,7 +6,7 @@ class Status extends GUI
     this.y=y;
     this.data=data;
     this.name=name;
-    reading="working correctly";
+    reading="working correctly";//displays status of turbines
   }
   
   void display()
@@ -26,12 +26,12 @@ class Status extends GUI
           textSize(14);
           textAlign(CENTER,RIGHT);
           fill(wall.colour);
-          text("status:"+reading,(x+xSpacer*1.9)+100,y);
+          text("status:"+reading,(x+xSpacer*1.9)+100,y);//displays core integrity
         }
       }
   }
   
-  void check()
+  void check()//causes status bars to flash
 {   
    for (Turbine tur : turbines)
    {
@@ -95,6 +95,7 @@ class Status extends GUI
               rect(centx-(halfScreenX/3),centy-50,2*(halfScreenX/3),200);
               fill(0);
               textSize(14);
+              //displays error message+evac notice
               text("Catastrophic Turbine Failure. Core unsalvagable, please evacuate",centx,centy+50);
               fill(255,0,0);
             }
