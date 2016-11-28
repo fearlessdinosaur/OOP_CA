@@ -1,6 +1,6 @@
 # OOP_CA
 HUD for OOP CA
--youtube Link: https://www.youtube.com/watch?v=Q7RU72dSav4
+-youtube Link: https://youtu.be/jgPm2xnk-8E
 
 **How To use**:
  - by hovering over the status bars to the left you can see their current status (ie working or not)
