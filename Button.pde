@@ -1,9 +1,9 @@
-class Button extends GUI
+class Button extends GUI//subclass of GUI
 {
   float xSize;
   float ySize;
   boolean run;
- Button(float x, float y,String name,float xSize, float ySize)
+ Button(float x, float y,String name,float xSize, float ySize)//button constructor
  {
     this.x=x;
     this.y=y;
@@ -13,6 +13,7 @@ class Button extends GUI
  }
  void display()
  {
+   // creates the major button design
    fill(0);
    textSize(xSize/17);
    textAlign(CENTER,CENTER);
