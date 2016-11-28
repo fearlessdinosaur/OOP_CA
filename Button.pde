@@ -1,4 +1,4 @@
-class Button extends GUI//subclass of GUI
+class Button extends GUI//subclass of GUI, used to draw buttons on screen
 {
   float xSize;
   float ySize;

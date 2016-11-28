@@ -1,4 +1,4 @@
-class Fan
+class Fan// class used to make the spinning section of the turbine
 {
   float theta;
   float rad;
@@ -8,7 +8,7 @@ class Fan
   float centy;
   boolean dam=false;
   boolean destroy=false;
-  Fan(float centx,float centy,float rad)
+  Fan(float centx,float centy,float rad)//fan constructor
   {
       this.centx=centx;
       this.centy=centy;
@@ -17,7 +17,7 @@ class Fan
    
   void display()
   { 
-
+      //draws the spinning blades
       for(theta=0;theta<360;theta +=45)
       {
         x=centx+ rad * cos(radians(theta+j));
@@ -38,7 +38,8 @@ class Fan
   }
   
   void broken()
-  {
+  {   
+      //draws stationary blades
       for(theta=0;theta<360;theta +=45)
       {
         x=centx+ rad * cos(radians(theta));
