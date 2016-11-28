@@ -95,7 +95,7 @@ class Status extends GUI
               rect(centx-(halfScreenX/3),centy-50,2*(halfScreenX/3),200);
               fill(0);
               textSize(14);
-              text("placeholder text until i work it out",centx,centy+100);
+              text("Catastrophic Turbine Failure. Core unsalvagable, please evacuate",centx,centy+100);
               fill(255,0,0);
             }
             if(count>75)

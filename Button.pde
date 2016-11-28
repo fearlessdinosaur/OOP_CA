@@ -13,9 +13,8 @@ class Button extends GUI
  }
  void display()
  {
-   pressed();
    fill(0);
-   textSize(36);
+   textSize(xSize/17);
    textAlign(CENTER,CENTER);
    if(meltCount<=1000)
    {
@@ -25,15 +24,5 @@ class Button extends GUI
    }
  }
  
- void pressed()
- {
-      if( mouseX<=x+xSpacer*2&&mouseX>=x)
-      {
-        if(mouseY<=y+ySpacer*1&&mouseY>=y)
-        {
-          mouseClicked();
-        }
-      }
- }
  
 }

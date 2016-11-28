@@ -41,6 +41,10 @@ class Walls
         if(mouseY<=centy+coreRad&&mouseY>=centy-coreRad)
         {
           text("Core Integrity: "+integ+"%",centx+coreRad,centy-coreRad);
+          if(mousePressed==true&& temp<3000)
+          {
+            temp=temp-5;
+          }
         }
       }
      stroke(colour);

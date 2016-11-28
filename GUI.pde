@@ -37,9 +37,9 @@ class GUI
             {
               press -=1;
             }
-            if(wall.integ>0)
+            if(wall.integ>0&&temp>3000)
             {
-               wall.integ -= .25;
+               wall.integ -= 0.5;
             }             
           }
       }    

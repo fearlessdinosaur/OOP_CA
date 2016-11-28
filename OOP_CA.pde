@@ -32,7 +32,8 @@ void setup()
   stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*9),"Fan 1",1.5));
   stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*7.5),"Fan 2",3.0));
   stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*6.0),"Fan 3",4.5));
-  stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*4.5),"Fan 4",6.0));  
+  stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*4.5),"Fan 4",6.0));
+  start= new Button(width-(xSpacer*2.5),height-ySpacer*2,"Run meltdown test",xSpacer*2,ySpacer);
   
 }
 DecimalFormat df = new DecimalFormat("0000.0");
@@ -60,7 +61,6 @@ void draw()
    stat2= new Status(width-(xSpacer*9.95),height-(ySpacer*7.5),"Fan 2",3.0);
    stat3= new Status(width-(xSpacer*9.95),height-(ySpacer*6.0),"Fan 3",4.5);
    stat4= new Status(width-(xSpacer*9.95),height-(ySpacer*4.5),"Fan 4",6.0);
-   start= new Button(width-(xSpacer*2.5),height-ySpacer*2,"Run meltdown test",xSpacer*2,ySpacer);
    wall.display();
 
    gauge1.display();
@@ -79,10 +79,17 @@ void draw()
 
 void mousePressed() 
 {
-  if(running==false)
-  {
-    running=true;
-  }
+      if( mouseX<=start.x+xSpacer*2&&mouseX>=start.x)
+      {
+        if(mouseY<=start.y+ySpacer*1&&mouseY>=start.y)
+        {
+            if(running==false)
+            {
+              running=true;
+            }    
+        }
+      }
+
   
   
 }

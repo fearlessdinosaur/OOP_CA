@@ -87,7 +87,7 @@ class Turbine
   }
   void meltdown()
   {  
-    start.pressed();
+
     if(running==true)
      {
 
