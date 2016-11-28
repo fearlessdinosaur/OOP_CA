@@ -1,5 +1,6 @@
 class Gauge extends GUI
 {
+  
   Gauge(float x, float y,String name,float data)
   {
     this.x=x;
@@ -10,6 +11,7 @@ class Gauge extends GUI
   
   void display()
   {
+      textAlign(CENTER,CENTER);
       textSize(15);
       fill(wall.colour);
       text(name+":"+df.format(data),x,y);

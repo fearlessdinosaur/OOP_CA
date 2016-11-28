@@ -5,7 +5,6 @@ class Turbine
   float y;
   float ang;
   float radius;
-  int j;
   int meltdown=45;
   int level=0;
   int val;

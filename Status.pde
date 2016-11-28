@@ -48,7 +48,7 @@ class Status extends GUI
               fill(0);
               count=0;
             }
-            reading="turbine Damaged";
+            reading="Overheated";
         }
       }
       
@@ -65,7 +65,7 @@ class Status extends GUI
               fill(0);
               count=0;
             }
-            reading="turbine Damaged";
+            reading="Overheated";
         }
       }
      
@@ -82,7 +82,7 @@ class Status extends GUI
               fill(0);
               count=0;
             }
-            reading="turbine Damaged";
+            reading="Overheated";
         }
       }
       if(tur.level>=4)
@@ -95,7 +95,7 @@ class Status extends GUI
               rect(centx-(halfScreenX/3),centy-50,2*(halfScreenX/3),200);
               fill(0);
               textSize(14);
-              text("Catastrophic Turbine Failure. Core unsalvagable, please evacuate",centx,centy+100);
+              text("Catastrophic Turbine Failure. Core unsalvagable, please evacuate",centx,centy+50);
               fill(255,0,0);
             }
             if(count>75)
@@ -103,7 +103,7 @@ class Status extends GUI
               fill(0);
               count=0;
             }
-            reading="turbine Damaged";          
+            reading="Overheated";          
         }
   
   

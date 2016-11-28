@@ -8,6 +8,7 @@ class GUI
   String name;
   String reading;
 
+
   
   void display()
   {
@@ -24,7 +25,26 @@ class GUI
       {
           if(tur.level==0)
           {
-
+           if(reset==true)
+           {
+             if(temp>1000)
+             {
+               temp -= 5;
+             }
+             if(press<400)
+             {
+               press++;
+             }
+           }
+           else
+           {
+             temp += (int)random(-3,3);
+             press += (int)random(-1,1);
+           }
+           if(temp<=1000 && press<=400)
+           {
+             reset=false;
+           }
 
           }
           if(tur.level>=1)
