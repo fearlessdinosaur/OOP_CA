@@ -29,7 +29,6 @@ class Button extends GUI
         if(mouseY<=y+ySpacer*1&&mouseY>=y)
         {
           mouseClicked();
-          println(run);
         }
       }
  }

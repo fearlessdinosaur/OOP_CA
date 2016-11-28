@@ -1,5 +1,6 @@
 class Turbine
 {
+  ArrayList<Fan> fans = new ArrayList<Fan>();
   float x;
   float y;
   float ang;
@@ -8,29 +9,56 @@ class Turbine
   int meltdown=45;
   int level=0;
   int val;
+  boolean dam;
+  float integ;
   Turbine(float theta, float rad)
   {  
     ang=theta;
     radius=rad;
+    x=centx+(radius-5)*cos(radians(ang));
+    y=centy+(radius-5)*sin(radians(ang));
+    dam=false;
+    fans.add(new Fan(x,y,radius));
+    integ=100;
   }
   void display()
   {  
+      if( mouseX<=x+xSpacer*2&&mouseX>=x)
+      {
+        if(mouseY<=y+ySpacer*1&&mouseY>=y)
+        {
+          fill(wall.colour);
+          textSize(14);
+          text("hull Integrity: "+integ+"%",x+50,y-100);
+        }
+      }
+    
+    
     fill(0);
     meltdown();
     if(level==1)
     { 
         damage(meltdown);
+        Turbine turb = turbines.get(0);
+        turb.dam=true;
+
     }
     if(level==2)
     { 
         damage(meltdown);
-        damage(meltdown+90);
+        damage(meltdown+90);          
+        Turbine turb = turbines.get(1);
+        turb.dam=true;
+
     }
     if(level==3)
     { 
         damage(meltdown);
         damage(meltdown+90);
         damage(meltdown+180);
+        Turbine turb = turbines.get(2);
+        turb.dam=true;
+    
     }
     if(level==4)
     { 
@@ -38,17 +66,26 @@ class Turbine
         damage(meltdown+90);
         damage(meltdown+180);
         damage(meltdown+270);
+        Turbine turb = turbines.get(3);
+        turb.dam=true;
     }
     
-    x=centx+(radius-5)*cos(radians(ang));
-    y=centy+(radius-5)*sin(radians(ang));
     ellipse(x, y, radius/4, radius/4);
+    
+    for (Fan fan : fans) 
+   {  
+      if(dam==false)
+      {
+        fan.display();
+      }
+      else
+      {
+        fan.broken();
+      }
+      
+   }
 
-    for (fanTheta=0; fanTheta<=360; fanTheta=fanTheta+45)
-    {
-      fan=new Fan(fanTheta, turbine.radius/8);
-      fan.display();
-    }
+      
   }
 
   void damage(float theta)
@@ -65,8 +102,8 @@ class Turbine
     start.pressed();
     if(running==true)
      {
+
        meltCount++;
-       println(meltCount);
        if(meltCount>=1000)
        {
          level=1;

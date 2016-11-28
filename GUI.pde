@@ -20,16 +20,19 @@ class GUI
   {
     if(frameCount%5==0)
     {  
-        if(turbine.level==0)
-        {
-          temp +=random(-10,10);
-          press +=random(-10,10);
-        }
-        if(turbine.level>=1)
-        {
-          temp +=5;
-          press -=2;
-        }
+      for (Turbine tur : turbines) 
+      {
+          if(tur.level==0)
+          {
+            temp +=random(-10,10);
+            press +=random(-10,10);
+          }
+          if(tur.level>=1)
+          {
+            temp +=5;
+            press -=2;
+          }
+      }    
     }
 
   } 

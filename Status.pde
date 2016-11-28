@@ -26,86 +26,88 @@ class Status extends GUI
           textSize(14);
           textAlign(CENTER,RIGHT);
           fill(wall.colour);
-          text("status:"+reading,(x+xSpacer*2)+100,y);
-          println("placeholder");
+          text("status:"+reading,(x+xSpacer*1.9)+100,y);
         }
       }
   }
   
   void check()
-{
-    if(turbine.level>=1)
+{   
+   for (Turbine tur : turbines)
+   {
+    if(tur.level>=1)
     {
-      if(data==1.5)
-      {
-          if(count<50)
-          {  
-            fill(255,0,0);
-          }
-          if(count>75)
-          {
-            fill(0);
-            count=0;
-          }
-          reading="turbine Damaged";
+        if(data==1.5)
+        {
+            if(count<50)
+            {  
+              fill(255,0,0);
+            }
+            if(count>75)
+            {
+              fill(0);
+              count=0;
+            }
+            reading="turbine Damaged";
+        }
       }
-    }
-    
-    if(turbine.level>=2)
-    {
-      if(data==1.5*2)
+      
+      if(tur.level>=2)
       {
-          if(count<50)
-          {  
-            fill(255,0,0);
-          }
-          if(count>75)
-          {
-            fill(0);
-            count=0;
-          }
-          reading="turbine Damaged";
+        if(data==1.5*2)
+        {
+            if(count<50)
+            {  
+              fill(255,0,0);
+            }
+            if(count>75)
+            {
+              fill(0);
+              count=0;
+            }
+            reading="turbine Damaged";
+        }
       }
-    }
-   
-    if(turbine.level>=3)
-    {
-      if(data==1.5*3)
+     
+      if(tur.level>=3)
       {
-          if(count<50)
-          {  
-            fill(255,0,0);
-          }
-          if(count>75)
-          {
-            fill(0);
-            count=0;
-          }
-          reading="turbine Damaged";
+        if(data==1.5*3)
+        {
+            if(count<50)
+            {  
+              fill(255,0,0);
+            }
+            if(count>75)
+            {
+              fill(0);
+              count=0;
+            }
+            reading="turbine Damaged";
+        }
       }
-    }
-    if(turbine.level>=4)
-    {
-      if(data==1.5*4)
+      if(tur.level>=4)
       {
-          if(count<50)
-          {  
-            fill(255,0,0);
-            rect(centx-(halfScreenX/3),centy-50,2*(halfScreenX/3),200);
-            fill(0);
-            textSize(14);
-            text("placeholder text until i work it out",centx,centy+100);
-            fill(255,0,0);
-          }
-          if(count>75)
-          {
-            fill(0);
-            count=0;
-          }
-        
+        if(data==1.5*4)
+        {
+            if(count<50)
+            {  
+              fill(255,0,0);
+              rect(centx-(halfScreenX/3),centy-50,2*(halfScreenX/3),200);
+              fill(0);
+              textSize(14);
+              text("placeholder text until i work it out",centx,centy+100);
+              fill(255,0,0);
+            }
+            if(count>75)
+            {
+              fill(0);
+              count=0;
+            }
+          
+        }
+  
+  
       }
-
-
-    }    
+   }
 }
 }

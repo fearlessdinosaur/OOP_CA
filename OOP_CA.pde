@@ -5,7 +5,8 @@
 */
 import java.text.*;
 Walls wall;
-Turbine turbine;
+ArrayList<Turbine> turbines = new ArrayList<Turbine>();
+ArrayList<Status> stats = new ArrayList<Status>();
 Fan fan;
 Gauge gauge1;
 Gauge gauge2;
@@ -24,6 +25,15 @@ void setup()
   ySpacer=height/10;
   halfScreenX=width-width/2;
   halfScreenY=height-height/2;
+  turbines.add(new Turbine(45,wall.outerRad/2));
+  turbines.add(new Turbine(135,wall.outerRad/2));
+  turbines.add(new Turbine(225,wall.outerRad/2));
+  turbines.add(new Turbine(315,wall.outerRad/2));
+  stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*9),"Fan 1",1.5));
+  stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*7.5),"Fan 2",3.0));
+  stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*6.0),"Fan 3",4.5));
+  stats.add(new Status(width-(xSpacer*9.95),height-(ySpacer*4.5),"Fan 4",6.0));  
+  
 }
 DecimalFormat df = new DecimalFormat("0000.0");
 float centx;
@@ -52,19 +62,19 @@ void draw()
    stat4= new Status(width-(xSpacer*9.95),height-(ySpacer*4.5),"Fan 4",6.0);
    start= new Button(width-(xSpacer*2.5),height-ySpacer*2,"Run meltdown test",xSpacer*2,ySpacer);
    wall.display();
-   for(theta=45;theta<=360;theta=theta+90)
-   {
-     turbine=new Turbine(theta,wall.outerRad/2);
-     turbine.display();
-   }
+
    gauge1.display();
    gauge2.display();
-   stat1.display();
-   stat2.display();
-   stat3.display();
-   stat4.display();
    gauge1.update();
    start.display();
+   for (Turbine tur : turbines) 
+   {
+      tur.display();
+   }
+   for (Status stat : stats) 
+   {
+      stat.display();
+   }
 }
 
 void mousePressed() 

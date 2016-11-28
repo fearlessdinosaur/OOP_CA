@@ -4,35 +4,49 @@ class Fan
   float rad;
   float x;
   float y;
+  float centx;
+  float centy;
   boolean dam=false;
   boolean destroy=false;
-  Fan(float ang,float radi)
+  Fan(float centx,float centy,float rad)
   {
-      theta=ang;
-      rad=radi;
+      this.centx=centx;
+      this.centy=centy;
+      this.rad=rad/8;
   }
    
   void display()
-  {   
-      
-      if(turbine.level>=1)
+  { 
+
+      for(theta=0;theta<360;theta +=45)
       {
-        destroy=true;
+        x=centx+ rad * cos(radians(theta+j));
+        y=centy+ rad * sin(radians(theta+j));
+        line(centx,centy,x,y);
+       
       }
-      if(turbine.ang>=turbine.meltdown && turbine.ang<=turbine.meltdown+turbine.val&& destroy==true)
+
+
+
+
+    
+    j+=2;
+
+
+
+
+  }
+  
+  void broken()
+  {
+      for(theta=0;theta<360;theta +=45)
       {
-      x=turbine.x+ rad * cos(radians(theta));
-      y=turbine.y+ rad * sin(radians(theta));
-      line(turbine.x,turbine.y,x,y);
-      j += .2;
+        x=centx+ rad * cos(radians(theta));
+        y=centy+ rad * sin(radians(theta));
+        line(centx,centy,x,y);
+       
       }
-      else
-      {
-        x=turbine.x+ rad * cos(radians(theta+j));
-        y=turbine.y+ rad * sin(radians(theta+j));
-        line(turbine.x,turbine.y,x,y);
-        j += .2;
-      }
+    
   }
   
 
