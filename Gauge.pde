@@ -1,4 +1,4 @@
-class Gauge extends GUI
+class Gauge extends GUI//subclass of GUI class
 {
   
   Gauge(float x, float y,String name,float data)
@@ -10,7 +10,7 @@ class Gauge extends GUI
   }
   
   void display()
-  {
+  {  //draws gauges seen on right of screen
       textAlign(CENTER,CENTER);
       textSize(15);
       fill(wall.colour);
